@@ -120,7 +120,7 @@ var SIZE = 10;
             }
             
             function showTile(tile, i, j) {
-                var scl = width / SIZE;
+                var scl = width / SIZE - 17;
                 var img = tile.img.cloneNode(true);
                 img.style.width = scl + "px";
                 img.style.height = scl + "px";
