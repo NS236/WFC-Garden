@@ -4,10 +4,10 @@ var SIZE = 10;
             
             var imgs = [];
             var img1 = new Image(327, 327);
-            img1.src = "images/tile2";
+            img1.src = "images/tile1.jpg";
             imgs.push(img1);
             var img2 = new Image(256, 256);
-            img2.src = "images/tile1";
+            img2.src = "images/tile2.jpg";
             imgs.push(img2);
             
             /*Tiles Legend
