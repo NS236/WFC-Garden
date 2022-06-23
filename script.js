@@ -4,10 +4,10 @@ var SIZE = 10;
             
             var imgs = [];
             var img1 = new Image(327, 327);
-            img1.src = "https://upload.wikimedia.org/wikipedia/commons/1/1b/Black_square.jpeg";
+            img1.src = "images/tile2";
             imgs.push(img1);
             var img2 = new Image(256, 256);
-            img2.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Grotte_de_Soreq%2C_israel%2C_Stalactite.JPG/640px-Grotte_de_Soreq%2C_israel%2C_Stalactite.JPG";
+            img2.src = "images/tile1";
             imgs.push(img2);
             
             /*Tiles Legend
