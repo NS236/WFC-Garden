@@ -3,58 +3,31 @@ var width = window.innerWidth;
 var height = window.innerHeight;
 
 var imgs = [];
-var img1 = new Image(327, 327);
-img1.src = "images/tile1.jpg";
-imgs.push(img1);
-var img2 = new Image(256, 256);
-img2.src = "images/tile2.jpg";
-imgs.push(img2);
-
-/*Tiles Legend
-A - Blank
-B - Pipe End
-*/
+for(var i = 1; i <= 81; i++) {
+  let img = new Image(100, 100);
+  img.src = "images/tile_" + i + ".svg";
+  imgs.push(img);
+}
 
 /*Sides Legend
-0 - tan
-1 - pipe blue
+0 - sky
+1 - green
+2 - light green
 */
 
 var nullTile = {
-  id: null,
-  img: null,
   rot: 0,
   sides: [-1, -1, -1, -1]
 };
 
-var tiles = {
-  // Blank
-  A: {
-    id: "A",
-    img: imgs[0],
-    rot: 0,
+var tiles = [
+  {
     sides: [0, 0, 0, 0]
   },
-  // Pipe End
-  B1: {
-    id: "B1",
-    img: imgs[1],
-    rot: 0,
-    sides: [1, 0, 0, 0]
-  },
-  B2: {
-    id: "B2",
-    img: imgs[1],
-    rot: 180,
-    sides: [0, 0, 1, 0]
-  },
-  B3: {
-    id: "B3",
-    img: imgs[1],
-    rot: 270,
+  {
     sides: [0, 0, 0, 1]
   },
-};
+];
 
 //credit: https://stackoverflow.com/a/966938
 function createArray(length) {
@@ -96,16 +69,16 @@ for (var j = 0; j < SIZE; j++) {
     var options = [];
     var sides = getSides(i, j);
 
-    for (var tile in tiles) {
+    for (var tile of tiles) {
       var plausible = true;
       for (var side = 0; side < sides.length; side++) {
-        if (sides[side] !== -1 && sides[side] !== tiles[tile].sides[side]) {
+        if (sides[side] !== -1 && sides[side] !== tile.sides[side]) {
           plausible = !true;
         }
       }
 
       if (plausible) {
-        options.push(tiles[tile]);
+        options.push(tile);
       }
     }
 
@@ -121,10 +94,10 @@ for (var j = 0; j < SIZE; j++) {
 
 function showTile(tile, i, j) {
   var scl = (width- 17) / SIZE;
-  var img = tile.img.cloneNode(true);
+  var tileImg = imgs[tiles.indexOf(tile)];
+  var img = tileImg.cloneNode(true);
   img.style.width = scl + "px";
   img.style.height = scl + "px";
-  img.className = "rot" + tile.rot;
   document.body.append(img)
 }
 
