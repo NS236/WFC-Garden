@@ -17,7 +17,7 @@ for (var i = 1; i <= 81; i++) {
 
 var nullTile = {
   rot: null,
-  sides: [null, null, null, null]
+  sides: [-1, -1, -1, -1]
 };
 
 var tiles = [
@@ -1338,13 +1338,13 @@ var grid = createArray(SIZE, SIZE);
 grid.forEach(function (row) {
   row.fill(nullTile);
 });
-// debug(grid);
+// console.log(grid);
 
 function getSides(i, j) {
-  var N = j > 0 ? grid[i][j - 1][2] : -1;
-  var E = i < SIZE - 1 ? grid[i + 1][j][3] : -1;
-  var S = j < SIZE - 1 ? grid[i][j + 1][0] : -1;
-  var W = i > 0 ? grid[i - 1][j][1] : -1;
+  var N = j > 0 ? grid[i][j - 1].sides[2] : -1;
+  var E = i < SIZE - 1 ? grid[i + 1][j].sides[3] : -1;
+  var S = j < SIZE - 1 ? grid[i][j + 1].sides[0] : -1;
+  var W = i > 0 ? grid[i - 1][j].sides[1] : -1;
 
   return [N, E, S, W];
 }
@@ -1357,11 +1357,11 @@ for (var j = 0; j < SIZE; j++) {
   for (var i = 0; i < SIZE; i++) {
     var options = [];
     var sides = getSides(i, j);
-
+    // console.log(sides);
     for (var tile of tiles) {
       var plausible = true;
       for (var side = 0; side < sides.length; side++) {
-        if (sides[side] !== -1 && sides[side] !== tile[side]) {
+        if (sides[side] !== -1 && sides[side] !== tile.sides[side]) {
           plausible = !true;
         }
       }
@@ -1383,10 +1383,11 @@ for (var j = 0; j < SIZE; j++) {
 
 function showTile(tile, i, j) {
   var scl = (width - 17) / SIZE;
-  var tileImg = imgs[tiles.indexOf(tile)];
+  var tileImg = imgs[tiles.indexOf(tile) % imgs.length];
   var img = tileImg.cloneNode(true);
   img.style.width = scl + "px";
   img.style.height = scl + "px";
+  img.className = "rot" + tile.rot;
   document.body.append(img);
 }
 
