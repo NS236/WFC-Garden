@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;">
+<svg width="100%" height="100%" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
     <g transform="matrix(2,0,0,2,-2.84217e-14,0)">
         <rect x="0" y="0" width="50" height="50" style="fill:rgb(160,221,255);"/>
     </g>
@@ -8,10 +8,10 @@
         <path d="M29.61,19.296C23.274,21.876 15.887,20.732 0.298,27.362" style="fill:none;stroke:rgb(43,168,74);stroke-width:7.61px;"/>
     </g>
     <g transform="matrix(1.79926,0.731464,-0.753208,1.85275,20.0727,-0.912474)">
-        <path d="M29.669,26.885C25.608,30.642 15.887,20.732 0.298,27.362" style="fill:none;stroke:rgb(43,168,74);stroke-width:2.54px;stroke-linecap:round;"/>
+        <path d="M29.669,26.885C25.608,30.642 15.887,20.732 0.298,27.362" style="fill:none;stroke:rgb(43,168,74);stroke-width:2.54px;"/>
     </g>
     <g transform="matrix(1.79926,0.731464,-0.753208,1.85275,20.0727,-0.912474)">
-        <path d="M21.49,30.113C15.155,32.693 16.51,22.22 0.921,28.85" style="fill:none;stroke:rgb(43,168,74);stroke-width:2.54px;stroke-linecap:round;"/>
+        <path d="M21.49,30.113C15.155,32.693 16.51,22.22 0.921,28.85" style="fill:none;stroke:rgb(43,168,74);stroke-width:2.54px;"/>
     </g>
     <g transform="matrix(2,0,0,2,-2.84217e-14,0)">
         <path d="M25,0C24.994,6.945 20.722,22.203 26.37,27.154C30.236,30.544 42.028,24.973 50,25" style="fill:none;stroke:rgb(36,130,50);stroke-width:7.5px;"/>

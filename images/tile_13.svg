@@ -7,4 +7,7 @@
     <g transform="matrix(1.79926,0.731464,-0.753208,1.85275,20.0727,-0.912474)">
         <path d="M47.994,8.532C39.339,12.055 24.42,18.419 33.841,41.106" style="fill:none;stroke:rgb(36,130,50);stroke-width:7.61px;"/>
     </g>
+    <g transform="matrix(1.79926,0.731464,-0.753208,1.85275,20.0727,-0.912474)">
+        <path d="M47.994,8.532C39.339,12.055 24.42,18.419 33.841,41.106" style="fill:none;stroke:rgb(36,130,50);stroke-width:7.61px;stroke-linecap:round;"/>
+    </g>
 </svg>

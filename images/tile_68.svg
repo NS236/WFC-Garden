@@ -8,10 +8,10 @@
         <path d="M31.898,36.464C30.352,32.77 35.442,21.504 32.57,14.621C28.977,6.008 18.527,3.587 14.451,-5.213" style="fill:none;stroke:rgb(43,168,74);stroke-width:7.61px;"/>
     </g>
     <g transform="matrix(2,0,0,2,-2.84217e-14,0)">
-        <path d="M50,25C35.956,25.105 24.757,37.57 25,50" style="fill:none;stroke:rgb(36,130,50);stroke-width:7.5px;stroke-linecap:butt;"/>
+        <path d="M50,25C35.956,25.105 24.757,37.57 25,50" style="fill:none;stroke:rgb(36,130,50);stroke-width:7.5px;"/>
     </g>
     <g transform="matrix(2,0,0,2,-2.84217e-14,0)">
-        <path d="M0,25C9.995,25.265 24.757,37.57 25,50" style="fill:none;stroke:rgb(36,130,50);stroke-width:7.5px;stroke-linecap:butt;"/>
+        <path d="M0,25C9.995,25.265 24.757,37.57 25,50" style="fill:none;stroke:rgb(36,130,50);stroke-width:7.5px;"/>
     </g>
     <g transform="matrix(-0.776249,0.359761,-0.403394,-0.870395,89.3636,81.0649)">
         <path d="M52.845,50.002C52.06,51.257 51.422,54.199 51.422,57.533C51.422,60.866 52.06,63.809 52.845,65.064C54.022,64.437 54.978,61.278 54.978,57.533C54.978,53.788 54.022,50.629 52.845,50.002Z" style="fill:rgb(36,130,50);"/>

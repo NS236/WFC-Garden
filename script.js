@@ -1,9 +1,9 @@
-var SIZE = 10;
+var SIZE = 15;
 var width = window.innerWidth;
 var height = window.innerHeight;
 
 var imgs = [];
-for(var i = 1; i <= 81; i++) {
+for (var i = 1; i <= 81; i++) {
   let img = new Image(100, 100);
   img.src = "images/tile_" + i + ".svg";
   imgs.push(img);
@@ -15,18 +15,90 @@ for(var i = 1; i <= 81; i++) {
 2 - light green
 */
 
-var nullTile = {
-  rot: 0,
-  sides: [-1, -1, -1, -1]
-};
+var nullTile = [-1, -1, -1, -1];
 
 var tiles = [
-  {
-    sides: [0, 0, 0, 0]
-  },
-  {
-    sides: [0, 0, 0, 1]
-  },
+  [0, 0, 0, 0],
+  [0, 0, 0, 1],
+  [0, 0, 0, 2],
+  [0, 0, 1, 0],
+  [0, 0, 1, 1],
+  [0, 0, 1, 2],
+  [0, 0, 2, 0],
+  [0, 0, 2, 1],
+  [0, 0, 2, 2],
+  [0, 1, 0, 0],
+  [0, 1, 0, 1],
+  [0, 1, 0, 2],
+  [0, 1, 1, 0],
+  [0, 1, 1, 1],
+  [0, 1, 1, 2],
+  [0, 1, 2, 0],
+  [0, 1, 2, 1],
+  [0, 1, 2, 2],
+  [0, 2, 0, 0],
+  [0, 2, 0, 1],
+  [0, 2, 0, 2],
+  [0, 2, 1, 0],
+  [0, 2, 1, 1],
+  [0, 2, 1, 2],
+  [0, 2, 2, 0],
+  [0, 2, 2, 1],
+  [0, 2, 2, 2],
+  [1, 0, 0, 0],
+  [1, 0, 0, 1],
+  [1, 0, 0, 2],
+  [1, 0, 1, 0],
+  [1, 0, 1, 1],
+  [1, 0, 1, 2],
+  [1, 0, 2, 0],
+  [1, 0, 2, 1],
+  [1, 0, 2, 2],
+  [1, 1, 0, 0],
+  [1, 1, 0, 1],
+  [1, 1, 0, 2],
+  [1, 1, 1, 0],
+  [1, 1, 1, 1],
+  [1, 1, 1, 2],
+  [1, 1, 2, 0],
+  [1, 1, 2, 1],
+  [1, 1, 2, 2],
+  [1, 2, 0, 0],
+  [1, 2, 0, 1],
+  [1, 2, 0, 2],
+  [1, 2, 1, 0],
+  [1, 2, 1, 1],
+  [1, 2, 1, 2],
+  [1, 2, 2, 0],
+  [1, 2, 2, 1],
+  [1, 2, 2, 2],
+  [2, 0, 0, 0],
+  [2, 0, 0, 1],
+  [2, 0, 0, 2],
+  [2, 0, 1, 0],
+  [2, 0, 1, 1],
+  [2, 0, 1, 2],
+  [2, 0, 2, 0],
+  [2, 0, 2, 1],
+  [2, 0, 2, 2],
+  [2, 1, 0, 0],
+  [2, 1, 0, 1],
+  [2, 1, 0, 2],
+  [2, 1, 1, 0],
+  [2, 1, 1, 1],
+  [2, 1, 1, 2],
+  [2, 1, 2, 0],
+  [2, 1, 2, 1],
+  [2, 1, 2, 2],
+  [2, 2, 0, 0],
+  [2, 2, 0, 1],
+  [2, 2, 0, 2],
+  [2, 2, 1, 0],
+  [2, 2, 1, 1],
+  [2, 2, 1, 2],
+  [2, 2, 2, 0],
+  [2, 2, 2, 1],
+  [2, 2, 2, 2],
 ];
 
 //credit: https://stackoverflow.com/a/966938
@@ -50,12 +122,11 @@ grid.forEach(function (row) {
 });
 // debug(grid);
 
-
 function getSides(i, j) {
-  var N = (j > 0) ? grid[i][j - 1].sides[2] : -1;
-  var E = (i < SIZE - 1) ? grid[i + 1][j].sides[3] : -1;
-  var S = (j < SIZE - 1) ? grid[i][j + 1].sides[0] : -1;
-  var W = (i > 0) ? grid[i - 1][j].sides[1] : -1;
+  var N = j > 0 ? grid[i][j - 1][2] : -1;
+  var E = i < SIZE - 1 ? grid[i + 1][j][3] : -1;
+  var S = j < SIZE - 1 ? grid[i][j + 1][0] : -1;
+  var W = i > 0 ? grid[i - 1][j][1] : -1;
 
   return [N, E, S, W];
 }
@@ -72,7 +143,7 @@ for (var j = 0; j < SIZE; j++) {
     for (var tile of tiles) {
       var plausible = true;
       for (var side = 0; side < sides.length; side++) {
-        if (sides[side] !== -1 && sides[side] !== tile.sides[side]) {
+        if (sides[side] !== -1 && sides[side] !== tile[side]) {
           plausible = !true;
         }
       }
@@ -93,12 +164,12 @@ for (var j = 0; j < SIZE; j++) {
 }
 
 function showTile(tile, i, j) {
-  var scl = (width- 17) / SIZE;
+  var scl = (width - 17) / SIZE;
   var tileImg = imgs[tiles.indexOf(tile)];
   var img = tileImg.cloneNode(true);
   img.style.width = scl + "px";
   img.style.height = scl + "px";
-  document.body.append(img)
+  document.body.append(img);
 }
 
 for (var j = 0; j < SIZE; j++) {
