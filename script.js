@@ -1,7 +1,7 @@
-const WIDTH = 15;
-const HEIGHT = 15;
 const width = window.innerWidth;
 const height = window.innerHeight;
+const WIDTH = Math.floor(width / 50);
+const HEIGHT = Math.floor(height / 50);
 
 let imgs = [];
 for (let i = 1; i <= 81; i++) {
@@ -1393,7 +1393,7 @@ function bestSpots() {
 }
 
 function showTile(tile, i, j) {
-  let scl = (width - 17) / WIDTH;
+  let scl = (width) / WIDTH;
   if(tile.filled) {
     let tileImg = imgs[tiles.indexOf(tile) % imgs.length];
     let img = tileImg.cloneNode(true);
