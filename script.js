@@ -1,7 +1,7 @@
 const width = window.innerWidth;
 const height = window.innerHeight;
-const WIDTH = Math.floor(width / 50);
-const HEIGHT = Math.floor(height / 50);
+const WIDTH = Math.floor(width / 50) + 1;
+const HEIGHT = Math.floor(height / 50) + 1;
 
 let imgs = [];
 for (let i = 1; i <= 81; i++) {
